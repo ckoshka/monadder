@@ -1,9 +1,9 @@
 // deno-lint-ignore-file no-explicit-any ban-types
 
 // take two functions, head and tail. execute each in a list, passing results from one to another. when mapping, simply concatenate the last two functions into a single function that does them synchronously and pass that as the first parameter. if initialising with just one, then make the second a simple identity function.
-export type AnyFn = (...args: any[]) => any;
+type AnyFn = (...args: any[]) => any;
 
-export type AnyAsyncFn = (a0?: any) => Promise<any>;
+type AnyAsyncFn = (a0?: any) => Promise<any>;
 
 export type IO<T> = {
 	map<B>(fn: (a0: T) => B): IO<B>;
